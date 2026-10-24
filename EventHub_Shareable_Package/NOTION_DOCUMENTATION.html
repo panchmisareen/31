@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub AI — Notion Documentation & HackDays 2026 Pitch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --card: #0f172a;
+      --border: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #6366f1;
+      --blue: #38bdf8;
+      --emerald: #34d399;
+      --amber: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1e1b4b, #0f172a);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--blue);
+    }
+    p, li {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .metric-box {
+      background: #020617;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+    }
+    .metric-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .metric-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--amber);
+      margin-top: 0.25rem;
+    }
+    pre {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #38bdf8;
+      margin: 1rem 0;
+    }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255,255,255,0.08);
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.85em;
+      color: #f1f5f9;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+    }
+    th {
+      background: #020617;
+      color: #fff;
+    }
+    td {
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--muted);
+    }
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      color: var(--emerald);
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Hacktober HackDays 2026 Submission</div>
+      <h1>🎟️ EventHub AI Documentation</h1>
+      <p>The Intelligent Campus Event OS, Idea Incubator, Collab Studio & Dynamic Cloudinary Credential Engine.</p>
+      
+      <div class="metric-grid">
+        <div class="metric-box">
+          <div class="metric-title">Judging Criteria</div>
+          <div class="metric-val">50% Solution</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-title">Cloudinary Integration</div>
+          <div class="metric-val">30% Media Engine</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-title">Notion Documentation</div>
+          <div class="metric-val">20% Strategy</div>
+        </div>
+      </div>
+
+      <a href="https://living-accessibility-string-pad.trycloudflare.com" target="_blank" class="live-pill">
+        <span class="live-dot"></span>
+        <span>Open Live Cloudflare Web Demo (Any Wi-Fi / Device) →</span>
+      </a>
+    </header>
+
+    <div class="card">
+      <h2>📌 1. Executive Summary</h2>
+      <p>EventHub AI solves four systemic disconnects in the university and hackathon ecosystem: information buried in long PDF notices, students having creative event ideas with no formal approval channel, fragmented student portfolios, and weeks-long delays issuing certificates.</p>
+      <p>Powered by <strong>Cloudinary Programmable Media Layer Overlays</strong>, tickets, badges, and certificates are edge-rendered dynamically via URLs without heavy server rendering load.</p>
+    </div>
+
+    <div class="card">
+      <h2>🏆 2. Problem Statement & Solution Breakdown (50% Evaluation)</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Campus Touchpoint</th>
+              <th>The Broken Reality</th>
+              <th>The EventHub AI Solution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Notice Dissemination</strong></td>
+              <td>Messy 5-page PDF circulars. Students miss deadlines and eligibility.</td>
+              <td><strong>Circular2Action LLM:</strong> Extracts dates, prize money, team sizes, and generates a live registration form in seconds.</td>
+            </tr>
+            <tr>
+              <td><strong>Student Ideation</strong></td>
+              <td>Students have creative event ideas but no pipeline to propose them to faculty.</td>
+              <td><strong>Idea Incubator:</strong> Propose ideas; AI scores feasibility (1-100) and drafts a budget; faculty can approve and 1-click launch live events.</td>
+            </tr>
+            <tr>
+              <td><strong>Ticketing & RSVP</strong></td>
+              <td>Fragile Google forms with no confirmation or digital badges.</td>
+              <td><strong>Dynamic Ticketing:</strong> Clear pricing tiers, promo codes (<code>HACKTOBER50</code>), and Cloudinary admission tickets with barcodes.</td>
+            </tr>
+            <tr>
+              <td><strong>Short Courses</strong></td>
+              <td>Lack of essential topics in traditional syllabus (Finance, Cyber, Rust).</td>
+              <td><strong>Online Lectures:</strong> Live streams and On-Demand masterclasses streamed with Cloudinary video optimization.</td>
+            </tr>
+            <tr>
+              <td><strong>Hackathon Collab</strong></td>
+              <td>Teams work across disconnected tabs and suffer painful last-minute merges.</td>
+              <td><strong>TeamForge Studio:</strong> Simultaneous Frontend, Backend & DB schema workspace with 1-click synchronized release merge!</td>
+            </tr>
+            <tr>
+              <td><strong>Developer Mentorship</strong></td>
+              <td>Beginners copy-paste errors without understanding why they happen.</td>
+              <td><strong>ErrorLens AI:</strong> Explains root cause, points out faulty lines, offers hints, and teaches the fix pedagogically.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>☁️ 3. Cloudinary Integration Matrix (30% Evaluation)</h2>
+      <p>EventHub uses Cloudinary deep into its functional workflow:</p>
+      <ul>
+        <li><strong>Dynamic Edge Certificates:</strong> Multi-layer text overlays (<code>l_text:Playfair Display</code>, <code>Cinzel</code>, <code>Roboto</code>) with zero server-side Chromium/Puppeteer overhead.</li>
+        <li><strong>Dynamic Admission Tickets:</strong> Overlays attendee name, event title, seat tier, ticket ID, and barcode directly onto ticket passes.</li>
+        <li><strong>Milestone Badges:</strong> Dynamic open-source circular badges (<em>First PR Merged</em>, <em>Git Master</em>).</li>
+        <li><strong>AI Auto-Cropping (<code>g_auto</code>):</strong> Responsive 16:9, 4:3, and 9:16 aspect ratios.</li>
+        <li><strong>Adaptive Video Streaming:</strong> Optimized playback (<code>vc_auto,q_auto,w_1280</code>).</li>
+      </ul>
+      <pre>https://res.cloudinary.com/demo/image/upload/w_1200,h_850,c_fill,b_rgb:0f172a/e_tint:80:black/l_text:Cinzel_22_bold:APEX%20INSTITUTE%20OF%20TECHNOLOGY,co_rgb:93c5fd,g_north,y_70/l_text:Playfair%20Display_46_bold:Aarav%20Sharma,co_rgb:fbbf24,g_north,y_250/l_text:Cinzel_28_bold:in%20Hacktoberfest%202026,co_rgb:38bdf8,g_north,y_400/q_auto,f_auto/samples/landscapes/nature-mountains.jpg</pre>
+    </div>
+
+    <div class="card">
+      <h2>🎯 4. 5-Minute Judge Presentation Script</h2>
+      <ol>
+        <li><strong>Persona Switcher:</strong> Toggle between Student (Aarav), Faculty (Dr. Priya Nair), and Organizer (Rohan Mehta).</li>
+        <li><strong>Circular2Action:</strong> Parse a hackathon circular into a structured event with one click.</li>
+        <li><strong>Idea Incubator:</strong> Propose an idea -> run AI Feasibility Scorer -> switch to Faculty -> Approve & Launch Live Event!</li>
+        <li><strong>Ticketing & RSVP:</strong> Select ticket tier -> apply promo code <code>HACKTOBER50</code> -> view dynamic Cloudinary ticket.</li>
+        <li><strong>TeamForge Collab:</strong> View simultaneous frontend, backend, and database code -> click <strong>"Merge Team Workspaces"</strong>.</li>
+        <li><strong>ErrorLens AI:</strong> Paste code error -> review root cause, pedagogical hints, and follow-up test question.</li>
+        <li><strong>Cloudinary Matrix:</strong> Test the live transformation playground.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

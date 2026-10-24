@@ -1,0 +1,21 @@
+{
+  "name": "eventhub-ai",
+  "version": "1.0.0",
+  "description": "EventHub AI: Campus Events, Idea Incubator & Automated Cloudinary Credentials",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "dev": "node server/server.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^13.0.0"
+  }
+}
